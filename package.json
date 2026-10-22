@@ -1,0 +1,14 @@
+{
+  "name": "shoresite-cms",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sass --watch --quiet-deps --load-path=node_modules scss/application.scss:assets/css/application.css",
+    "dev:poll": "sass --watch --poll --quiet-deps --load-path=node_modules scss/application.scss:assets/css/application.css",
+    "build": "sass --quiet-deps --load-path=node_modules --no-source-map --style=compressed scss/application.scss:assets/css/application.css"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.80.0"
+  }
+}

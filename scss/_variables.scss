@@ -1,0 +1,28 @@
+:root,
+[data-bs-theme="light"] {
+  --bs-body-font-size: 0.875rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #4c4c5c;
+
+  // Bootstrap Colors
+  --bs-primary: #176F9A;
+  --bs-primary-rgb: 23, 111, 154;
+  --bs-secondary: #9ba6b7;
+  --bs-secondary-rgb: 155, 166, 183;
+  --bs-light: #EEF2F7;
+  --bs-light-rgb: 238,242,247;
+
+  --sidebar-width: 255px;
+  --topbar-height: 56px;
+  --subtopbar-height: 48px;
+  --surface: #ffffff;
+  --surface-2: #f7f8fa;
+  --border: #e6e8eb;
+  --text-muted: #6b7280;
+  --sidebar-selected: #F1F0F5;
+  --very-light-gray: #FBFBFD;
+  --card-border: #edf2f9;
+  --pg-hover: #f6f7fb;
+
+}
