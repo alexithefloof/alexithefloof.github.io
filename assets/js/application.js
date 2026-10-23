@@ -87,4 +87,62 @@
             link.setAttribute("aria-current", "page");
         }
     });
-})();
+});
+
+/* Modals */
+document.addEventListener("DOMContentLoaded", function () {
+    const modalElement = document.getElementById("project-modal");
+    if (!modalElement || !window.bootstrap) return;
+
+    const projectModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+    const modalTag = document.getElementById("modal-tag");
+    const modalDate = document.getElementById("modal-date");
+    const modalTitle = document.getElementById("modal-title");
+    const modalImage = document.getElementById("modal-image");
+    const modalDescription = document.getElementById("modal-description");
+
+    function openProject(card) {
+        const title = card.querySelector(".project-title")?.textContent.trim() || "Project";
+        const category = card.querySelector(".project-category")?.textContent.trim() || "Project";
+        const date = card.querySelector(".project-date")?.textContent.trim() || "";
+        const image = card.querySelector(".project-image");
+        const description = card.querySelector(".project-full-description");
+
+        modalTag.textContent = category;
+        modalDate.textContent = date;
+        modalDate.hidden = !date;
+        modalTitle.textContent = title;
+
+        if (image) {
+            modalImage.src = image.src;
+            modalImage.alt = image.alt || title;
+            modalImage.hidden = false;
+        } else {
+            modalImage.hidden = true;
+        }
+
+        modalDescription.innerHTML = description
+            ? description.innerHTML
+            : (card.querySelector(".project-excerpt")?.innerHTML || "");
+
+        projectModal.show();
+    }
+
+    document.querySelectorAll(".portfolio-card").forEach(function (card) {
+        card.addEventListener("click", function (event) {
+            if (event.target.closest("a, button, input, select, textarea, [data-bs-dismiss]")) return;
+
+            openProject(card);
+        });
+
+        card.addEventListener("keydown", function (event) {
+            if (event.target !== card) return;
+
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openProject(card);
+            }
+        });
+    });
+});
