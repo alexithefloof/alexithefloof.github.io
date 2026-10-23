@@ -34,7 +34,7 @@
         }
 
         try {
-            const response = await fetch(siteURL(`components/${name}.html`));
+            const response = await fetch(siteURL(`components/${name}`));
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
@@ -42,7 +42,7 @@
 
             target.innerHTML = await response.text();
         } catch (error) {
-            console.error(`Could not load ${name}.html:`, error);
+            console.error(`Could not load ${name}:`, error);
         }
     }
 

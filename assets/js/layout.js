@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         try {
-            const response = await fetch(`./components/${name}.html`);
+            const response = await fetch(`./components/${name}`);
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.url}`);
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             target.innerHTML = await response.text();
         } catch (error) {
-            console.error(`Could not load ${name}.html:`, error);
+            console.error(`Could not load ${name}:`, error);
         }
     }
 
