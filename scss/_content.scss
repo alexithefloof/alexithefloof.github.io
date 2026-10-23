@@ -150,3 +150,24 @@
         font-size: 19px;
     }
 }
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.45rem 0.85rem;
+
+    color: var(--white);
+    background: var(--lexi-blue);
+    border: 1px solid var(--accent-secondary);
+    border-radius: 9999px;
+
+    box-shadow: var(--arcade-cyan-glow);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-align: center;
+    text-transform: uppercase;
+}
