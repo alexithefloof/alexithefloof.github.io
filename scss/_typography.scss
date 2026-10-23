@@ -1,3 +1,63 @@
-.fs-xxs {
-  font-size: var(--ss-font-size-xxs) !important;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+
+  background:
+    linear-gradient(rgba(9, 6, 23, 0.92),
+      rgba(9, 6, 23, 0.97)),
+    repeating-linear-gradient(0deg,
+      transparent 0 3px,
+      rgba(0, 245, 212, 0.045) 3px 4px),
+    var(--arcade-bg);
+
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h2,
+h3,
+.hero-eyebrow,
+.post-date,
+.hero-bottom-line {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+
+  transition:
+    color var(--transition-speed) ease,
+    text-shadow var(--transition-speed) ease;
+
+  &:hover {
+    color: var(--accent-warm);
+    text-shadow: var(--arcade-cyan-glow);
+  }
+}
+
+button {
+  color: inherit;
+}
+
+::selection {
+  color: var(--arcade-bg);
+  background: var(--accent-secondary);
 }

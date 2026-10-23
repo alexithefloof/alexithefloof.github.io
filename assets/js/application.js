@@ -1,0 +1,90 @@
+
+"use strict";
+
+(async function () {
+    const script = document.querySelector('script[src$="assets/js/layout.js"]');
+
+    if (!script) {
+        console.error("Layout script could not identify its own path.");
+        return;
+    }
+
+    // Determine the site root from /assets/js/layout.js.
+    const scriptURL = new URL(script.src, window.location.href);
+    const scriptPath = scriptURL.pathname;
+    const marker = "/assets/js/layout.js";
+    const markerIndex = scriptPath.lastIndexOf(marker);
+
+    if (markerIndex === -1) {
+        console.error("Unexpected layout.js location:", scriptPath);
+        return;
+    }
+
+    const siteRoot = scriptPath.slice(0, markerIndex);
+
+    function siteURL(path) {
+        return `${siteRoot}/${path}`.replace(/\/+/g, "/");
+    }
+
+    async function loadComponent(name, selector) {
+        const target = document.querySelector(selector);
+
+        if (!target) {
+            return;
+        }
+
+        try {
+            const response = await fetch(siteURL(`components/${name}.html`));
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            target.innerHTML = await response.text();
+        } catch (error) {
+            console.error(`Could not load ${name}.html:`, error);
+        }
+    }
+
+    await Promise.all([
+        loadComponent("_header", "[data='header']"),
+        loadComponent("_footer", "[data='footer']")
+    ]);
+
+    // Fix internal links for root sites and repository-based GitHub Pages.
+    document.querySelectorAll("[data-site-href]").forEach(function (link) {
+        const path = link.dataset.siteHref;
+        link.href = siteURL(path);
+    });
+
+    // Update the copyright year.
+    document.querySelectorAll("[current-year]").forEach(function (element) {
+        element.textContent = new Date().getFullYear();
+    });
+
+    // Mark the active navigation link.
+    const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+    const currentHash = window.location.hash;
+
+    document.querySelectorAll(".site-header [data-site-href]").forEach(function (link) {
+        const target = new URL(link.href, window.location.href);
+        const targetPath = target.pathname.replace(/\/+$/, "") || "/";
+
+        const isHome = targetPath === siteRoot + "/index.html" ||
+            targetPath === siteRoot + "/" ||
+            (siteRoot === "" && targetPath === "/index.html") ||
+            (siteRoot === "" && targetPath === "/");
+
+        const isCurrentPage = targetPath === currentPath ||
+            (isHome && (currentPath === siteRoot || currentPath === siteRoot + "/"));
+
+        const isCurrentSection = isCurrentPage &&
+            target.hash &&
+            target.hash === currentHash;
+
+        if (isCurrentSection || (isCurrentPage && !target.hash && !currentHash)) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+    });
+})();

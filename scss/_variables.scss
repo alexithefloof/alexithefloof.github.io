@@ -1,28 +1,52 @@
-:root,
-[data-bs-theme="light"] {
-  --bs-body-font-size: 0.875rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-  --bs-body-color: #4c4c5c;
+:root {
+  --accent-color: #ff3df2;
+  --accent-secondary: #00f5d4;
+  --accent-warm: #ffe66d;
 
-  // Bootstrap Colors
-  --bs-primary: #176F9A;
-  --bs-primary-rgb: 23, 111, 154;
-  --bs-secondary: #9ba6b7;
-  --bs-secondary-rgb: 155, 166, 183;
-  --bs-light: #EEF2F7;
-  --bs-light-rgb: 238,242,247;
+  --text-color: #e8e7ff;
+  --heading-color: #ffffff;
+  --muted-color: #aaa8cf;
 
-  --sidebar-width: 255px;
-  --topbar-height: 56px;
-  --subtopbar-height: 48px;
-  --surface: #ffffff;
-  --surface-2: #f7f8fa;
-  --border: #e6e8eb;
-  --text-muted: #6b7280;
-  --sidebar-selected: #F1F0F5;
-  --very-light-gray: #FBFBFD;
-  --card-border: #edf2f9;
-  --pg-hover: #f6f7fb;
+  --white: #ffffff;
+  --border-color: #39305f;
+  --button-radius: 3.125rem;
+  --modal-overlay: rgba(18, 2, 2, 0.88);
 
+  --desktop-width: 1140px;
+  --card-gap: 30px;
+  --transition-speed: 0.2s;
+  --mobile-breakpoint: 767px;
+
+  --arcade-bg: #3B2C40;
+  --arcade-panel: #423247;
+
+  --arcade-glow:
+    0 0 8px rgba(255, 61, 242, 0.55),
+    0 0 24px rgba(255, 61, 242, 0.18);
+
+  --arcade-cyan-glow:
+    0 0 8px rgba(0, 245, 212, 0.5);
+
+  --rainbow-red: #ff3030;
+  --rainbow-orange: #a8490d;
+  --rainbow-yellow: #92720c;
+  --rainbow-green: #17663a;
+  --rainbow-blue: #164f91;
+  --rainbow-indigo: #302d7d;
+  --rainbow-purple: #49206f;
+
+  --rainbow-red-light: #ff5b6e;
+  --rainbow-orange-light: #ffad66;
+  --rainbow-yellow-light: #ffe66d;
+  --rainbow-green-light: #70e1a1;
+  --rainbow-blue-light: #62b9ff;
+  --rainbow-purple-light: #b99aff;
+
+  --rainbow-orange-shadow: #803608;
+  --rainbow-yellow-shadow: #725809;
+  --rainbow-green-shadow: #104b2a;
+  --rainbow-blue-shadow: #103968;
+  --rainbow-indigo-shadow: #211f57;
+  --rainbow-purple-shadow: #301348;
+  --rainbow-deep-shadow: #210d34;
 }

@@ -1,0 +1,202 @@
+
+.portfolio {
+    position: relative;
+    isolation: isolate;
+
+    // Main layer: 40 stars.
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        background-image:
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg");
+
+        background-repeat: no-repeat;
+
+        background-position:
+            5% 3%, 48% 2%, 92% 6%, 76% 13%,
+            22% 10%, 2% 20%, 98% 23%, 60% 17%,
+            8% 29%, 88% 32%, 3% 39%, 54% 35%,
+            96% 43%, 16% 45%, 72% 48%, 43% 51%,
+            5% 56%, 58% 59%, 90% 62%, 27% 64%,
+            78% 68%, 12% 72%, 49% 75%, 94% 78%,
+            32% 82%, 65% 85%, 6% 88%, 84% 91%,
+            42% 94%, 20% 97%, 56% 11%, 97% 36%,
+            25% 7%, 75% 55%, 51% 42%, 11% 63%,
+            91% 96%, 37% 49%, 68% 28%, 56% 89%;
+
+        background-size:
+            34px, 25px, 42px, 28px,
+            23px, 38px, 30px, 21px,
+            26px, 35px, 31px, 24px,
+            40px, 27px, 33px, 29px,
+            22px, 36px, 28px, 31px,
+            39px, 24px, 34px, 27px,
+            30px, 22px, 37px, 25px,
+            32px, 20px, 29px, 35px,
+            24px, 38px, 26px, 33px,
+            28px, 21px, 31px, 36px;
+
+        opacity: 0.16;
+    }
+
+    // Second layer: 40 smaller stars filling the open spaces.
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        background-image:
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg"),
+            url("../images/star-2.svg"),
+            url("../images/star-3.svg"),
+            url("../images/star-1.svg"),
+            url("../images/star-0.svg");
+
+        background-repeat: no-repeat;
+
+        background-position:
+            28% 8%, 83% 13%, 63% 25%, 18% 33%,
+            72% 43%, 43% 49%, 12% 59%, 89% 63%,
+            32% 71%, 69% 81%, 44% 87%, 96% 40%,
+            23% 91%, 78% 96%, 55% 12%, 5% 77%,
+            38% 19%, 95% 16%, 14% 38%, 61% 29%,
+            84% 35%, 25% 57%, 74% 58%, 46% 67%,
+            7% 47%, 92% 70%, 35% 76%, 58% 83%,
+            17% 85%, 87% 88%, 52% 93%, 3% 14%,
+            66% 5%, 31% 42%, 98% 60%, 20% 65%,
+            80% 23%, 40% 31%, 70% 52%, 48% 98%;
+
+        background-size:
+            18px, 23px, 20px, 17px,
+            22px, 16px, 24px, 19px,
+            21px, 17px, 20px, 18px,
+            16px, 22px, 19px, 17px,
+            24px, 16px, 20px, 18px,
+            22px, 15px, 19px, 23px,
+            17px, 21px, 16px, 20px,
+            18px, 24px, 15px, 19px,
+            22px, 17px, 21px, 16px,
+            23px, 18px, 20px, 17px;
+
+        opacity: 0.12;
+    }
+
+    > .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio::before {
+        background-size:
+            24px, 18px, 29px, 20px,
+            16px, 27px, 21px, 15px,
+            18px, 25px, 22px, 17px,
+            28px, 19px, 23px, 20px,
+            15px, 24px, 18px, 21px,
+            27px, 17px, 23px, 19px,
+            21px, 15px, 26px, 18px,
+            22px, 14px, 20px, 25px,
+            17px, 27px, 19px, 23px,
+            20px, 15px, 22px, 25px;
+
+        opacity: 0.14;
+    }
+
+    .portfolio::after {
+        background-size:
+            13px, 16px, 14px, 12px,
+            15px, 11px, 17px, 13px,
+            15px, 12px, 14px, 13px,
+            11px, 16px, 14px, 12px,
+            17px, 11px, 14px, 13px,
+            15px, 10px, 13px, 16px,
+            12px, 15px, 11px, 14px,
+            13px, 17px, 10px, 13px,
+            15px, 12px, 14px, 11px,
+            16px, 12px, 14px, 11px;
+
+        opacity: 0.12;
+    }
+}
