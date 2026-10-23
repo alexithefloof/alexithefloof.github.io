@@ -12404,6 +12404,169 @@ button {
     font-size: 19px;
   }
 }
+#project-modal {
+  --bs-modal-color: var(--text-color);
+  --bs-modal-bg: var(--arcade-panel);
+  --bs-modal-border-color: var(--border-color);
+  --bs-modal-border-radius: 0.75rem;
+  --bs-modal-header-border-color: var(--border-color);
+}
+#project-modal .modal-dialog {
+  width: min(100% - 1.5rem, 900px);
+}
+#project-modal .modal-content {
+  overflow: hidden;
+  color: var(--text-color);
+  background: linear-gradient(145deg, rgba(35, 23, 58, 0.98), rgba(13, 9, 31, 0.99)) padding-box, linear-gradient(90deg, var(--rainbow-red-light), var(--rainbow-orange-light), var(--rainbow-yellow-light), var(--rainbow-green-light), var(--rainbow-blue-light), var(--rainbow-indigo), var(--rainbow-purple-light), var(--rainbow-red-light)) border-box;
+  border: 2px solid transparent;
+  border-radius: var(--bs-modal-border-radius);
+  box-shadow: 0 0 12px rgba(255, 61, 242, 0.18), 0 0 18px rgba(0, 245, 212, 0.12), 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+#project-modal .modal-header {
+  position: relative;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1.5rem 1.25rem;
+  padding-right: 4rem;
+  background: rgba(9, 6, 23, 0.42);
+  border-bottom: 1px solid var(--border-color);
+}
+#project-modal .modal-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.7rem;
+  padding-top: 0.6rem;
+  color: var(--white);
+  background: var(--lexi-blue);
+  border: 1px solid var(--accent-secondary);
+  border-radius: 0.25rem;
+  box-shadow: var(--arcade-cyan-glow);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-align: center;
+  text-transform: uppercase;
+}
+#project-modal .modal-date {
+  color: var(--muted-color) !important;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+#project-modal .modal-title {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  text-shadow: 2px 2px 0 rgba(255, 61, 242, 0.18);
+}
+#project-modal .btn-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  margin: 0 !important;
+  padding: 0.65rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+  filter: invert(1);
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+#project-modal .btn-close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+#project-modal .btn-close:focus-visible {
+  outline: 2px solid var(--accent-secondary);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+#project-modal .modal-body {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  color: var(--text-color);
+  line-height: 1.8;
+}
+#project-modal .modal-body #modal-image {
+  display: block;
+  max-height: 440px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+#project-modal .modal-body #modal-description {
+  overflow-wrap: anywhere;
+}
+#project-modal .modal-body #modal-description p:last-child {
+  margin-bottom: 0;
+}
+#project-modal .modal-body #modal-description a {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+#project-modal .modal-body #modal-description a:hover {
+  color: var(--accent-warm);
+}
+#project-modal .modal-body #modal-description ul,
+#project-modal .modal-body #modal-description ol {
+  padding-left: 1.4rem;
+}
+#project-modal .modal-body #modal-description li + li {
+  margin-top: 0.35rem;
+}
+#project-modal .modal-body #modal-description h3,
+#project-modal .modal-body #modal-description h4,
+#project-modal .modal-body #modal-description h5 {
+  margin-top: 1.5rem;
+  color: var(--heading-color);
+}
+#project-modal .modal-body #modal-description code {
+  padding: 0.15rem 0.35rem;
+  color: var(--accent-secondary);
+  background: rgba(0, 245, 212, 0.08);
+  border-radius: 0.25rem;
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  background-color: rgba(65, 65, 70, 0.78);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Scrollbar */
+.modal-body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lexi-blue) rgba(57, 57, 80, 0.329);
+}
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--lexi-blue);
+}
+
+@media (max-width: 575.98px) {
+  #project-modal .modal-dialog {
+    width: auto;
+    margin: 0.75rem;
+  }
+  #project-modal .modal-header {
+    padding: 1.1rem 1rem;
+  }
+  #project-modal .modal-body {
+    padding: 1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #project-modal .btn-close,
+  #project-modal .btn {
+    transition: none;
+  }
+}
 .portfolio {
   position: relative;
   isolation: isolate;
