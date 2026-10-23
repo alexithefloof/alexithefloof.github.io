@@ -70,9 +70,9 @@
         const target = new URL(link.href, window.location.href);
         const targetPath = target.pathname.replace(/\/+$/, "") || "/";
 
-        const isHome = targetPath === siteRoot + "/index.html" ||
+        const isHome = targetPath === siteRoot + "/" ||
             targetPath === siteRoot + "/" ||
-            (siteRoot === "" && targetPath === "/index.html") ||
+            (siteRoot === "" && targetPath === "/") ||
             (siteRoot === "" && targetPath === "/");
 
         const isCurrentPage = targetPath === currentPath ||
