@@ -104,12 +104,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function openProject(card) {
         const title = card.querySelector(".project-title")?.textContent.trim() || "Project";
-        const category = card.querySelector(".project-category")?.textContent.trim() || "Project";
+        const categories = card.querySelectorAll(".project-category");
         const date = card.querySelector(".project-date")?.textContent.trim() || "";
         const image = card.querySelector(".project-image");
         const description = card.querySelector(".project-full-description");
 
-        modalTag.textContent = category;
+        // Display all categories as individual badges
+        modalTag.replaceChildren();
+
+        categories.forEach(function (category) {
+            const badge = document.createElement("span");
+            badge.className = "modal-tag badge";
+            badge.textContent = category.textContent.trim();
+            modalTag.appendChild(badge);
+        });
+
         modalDate.textContent = date;
         modalDate.hidden = !date;
         modalTitle.textContent = title;
