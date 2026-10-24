@@ -1,5 +1,5 @@
 
-.portfolio {
+.portfolio, .quote-form {
     position: relative;
     isolation: isolate;
 
@@ -168,7 +168,7 @@
 }
 
 @media (max-width: 767px) {
-    .portfolio::before {
+    .portfolio, .quote-form::before {
         background-size:
             24px, 18px, 29px, 20px,
             16px, 27px, 21px, 15px,
@@ -184,7 +184,7 @@
         opacity: 0.14;
     }
 
-    .portfolio::after {
+    .portfolio, .quote-form::after {
         background-size:
             13px, 16px, 14px, 12px,
             15px, 11px, 17px, 13px,

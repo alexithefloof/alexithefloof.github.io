@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A portfolio of design and development projects.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/application.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/layout.js" defer></script>
+    <script src="assets/js/application.js" defer></script>
+    <script src="assets/js/logo.js" defer></script>
+
+    <title>AlexiTheFloof</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <div data="header"></div>
+
+    <main class="flex-grow-1 quote-form">
+
+        <form id="commission-form" enctype="multipart/form-data">
+            <h2>VRChat Commission Request</h2>
+            <p>Fields marked * are required.</p>
+
+            <label for="name">Name *</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email">
+
+            <label for="discord">Discord Username</label>
+            <input id="discord" name="discord" type="text">
+
+            <label for="project-type">Project Type *</label>
+            <select id="project-type" name="project_type" required>
+                <option value="">Select a project type</option>
+                <option>Custom VRChat Avatar</option>
+                <option>Avatar Edit / Modification</option>
+                <option>Custom Asset (Clothing, Hair, Accessories)</option>
+                <option>Avatar Optimization / Fixes</option>
+                <option>Other</option>
+            </select>
+
+            <label for="character-name">Character / Avatar Name</label>
+            <input id="character-name" name="character_name" type="text">
+
+            <label for="species">Avatar Species / Style</label>
+            <input id="species" name="species" type="text" placeholder="e.g. Furry, Plush, Puppy, Protogen">
+
+            <label for="details">Project Details / Special Requests</label>
+            <textarea id="details" name="details" rows="5" placeholder="Describe your project, desired features, toggles, assets, 
+accommodations, or special requests."></textarea>
+
+            <label for="references">Reference Images</label>
+            <input id="references" name="references" type="file" accept=".png,.jpg,.jpeg,.pdf" multiple>
+            <small>Maximum 15 MB per file.</small>
+
+            <button type="submit">Submit Commission Request</button>
+        </form>
+
+    </main>
+
+    <div data="footer"></div>
+
+</body>
+
+</html>
