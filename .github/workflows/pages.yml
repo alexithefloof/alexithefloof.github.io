@@ -43,10 +43,8 @@ jobs:
 
       - name: Prepare site
         run: |
-          echo "Checking deployed CSS..."
-          ls -lah _site/assets/css/
-          test -s _site/assets/css/application.css
-          mkdir _site
+          mkdir -p _site
+
           rsync -av ./ _site/ \
             --exclude='.git/' \
             --exclude='.github/' \
@@ -55,7 +53,12 @@ jobs:
             --exclude='_site/' \
             --exclude='package.json' \
             --exclude='package-lock.json'
+
           touch _site/.nojekyll
+
+          echo "Checking deployed CSS..."
+          ls -lah _site/assets/css/
+          test -s _site/assets/css/application.css
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
