@@ -34,10 +34,18 @@ jobs:
         run: npm ci
 
       - name: Compile SCSS
-        run: npm run build
+        run: |
+          mkdir -p assets/css
+          npm run build
+          echo "Compiled CSS:"
+          ls -lah assets/css/
+          test -s assets/css/application.css
 
       - name: Prepare site
         run: |
+          echo "Checking deployed CSS..."
+          ls -lah _site/assets/css/
+          test -s _site/assets/css/application.css
           mkdir _site
           rsync -av ./ _site/ \
             --exclude='.git/' \
