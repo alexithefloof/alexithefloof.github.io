@@ -51,8 +51,7 @@
         loadComponent("_footer", "[data='footer']")
     ]);
 
-    // Fix internal links for root sites and repository-based GitHub Pages.
-    document.querySelectorAll("[data-site-href]").forEach(function (link) {
+    document.querySelectorAll("a[href]").forEach(function (link) {
         const path = link.dataset.siteHref;
         link.href = siteURL(path);
     });
@@ -66,7 +65,7 @@
     const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
     const currentHash = window.location.hash;
 
-    document.querySelectorAll(".site-header [data-site-href]").forEach(function (link) {
+    document.querySelectorAll(".site-header a[href]").forEach(function (link) {
         const target = new URL(link.href, window.location.href);
         const targetPath = target.pathname.replace(/\/+$/, "") || "/";
 

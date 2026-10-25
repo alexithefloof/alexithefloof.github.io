@@ -32,13 +32,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         element.textContent = new Date().getFullYear();
     });
 
-    document.querySelectorAll("[data-site-href]").forEach(function (link) {
-        link.href = new URL(link.dataset.siteHref, document.baseURI).href;
-    });
-
     const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
-    document.querySelectorAll(".site-header [data-site-href]").forEach(function (link) {
+    document.querySelectorAll(".site-header a[href]").forEach(function (link) {
         const target = new URL(link.href);
         const targetPath = target.pathname.replace(/\/+$/, "") || "/";
 
