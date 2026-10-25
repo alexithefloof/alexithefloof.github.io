@@ -1,9 +1,7 @@
-
-.portfolio, .quote-form {
+.portfolio, .quote-form, .tos {
     position: relative;
     isolation: isolate;
 
-    // Main layer: 40 stars.
     &::before {
         content: "";
         position: absolute;
@@ -82,7 +80,6 @@
         opacity: 0.16;
     }
 
-    // Second layer: 40 smaller stars filling the open spaces.
     &::after {
         content: "";
         position: absolute;
@@ -168,7 +165,7 @@
 }
 
 @media (max-width: 767px) {
-    .portfolio, .quote-form::before {
+    .portfolio, .quote-form, .tos::before {
         background-size:
             24px, 18px, 29px, 20px,
             16px, 27px, 21px, 15px,
@@ -184,7 +181,7 @@
         opacity: 0.14;
     }
 
-    .portfolio, .quote-form::after {
+    .portfolio, .quote-form, .tos::after {
         background-size:
             13px, 16px, 14px, 12px,
             15px, 11px, 17px, 13px,
