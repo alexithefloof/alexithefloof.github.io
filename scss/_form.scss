@@ -2,11 +2,12 @@
     position: relative;
     z-index: 2;
     isolation: isolate;
-    
-    --form-navbar-offset: 80px;
+
     width: calc(100% - 32px);
     max-width: 680px;
-    margin: calc(var(--form-navbar-offset) + 40px) auto 40px;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-left: auto;
 
     padding: 32px;
     background:
@@ -207,21 +208,12 @@
     }
 
     @media (max-width: 768px) {
-        --form-navbar-offset: 80px;
-
         padding: 26px 22px;
-
-        margin-top: calc(var(--form-navbar-offset) + 30px);
     }
 
     @media (max-width: 600px) {
-        --form-navbar-offset: 80px;
-
         width: calc(100% - 24px);
-
-        margin:
-            calc(var(--form-navbar-offset) + 20px) auto 24px;
-
+        margin-bottom: 24px;
         padding: 22px 18px;
 
         h2 {
