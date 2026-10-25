@@ -1,8 +1,12 @@
 .tos {
+    padding: 0 15vw;
+
     h1 {
+        text-transform: uppercase;
         color: var(--accent-color);
     }
     h2 {
+        font-size: 1.17em;
         color: var(--accent-secondary);
     }
 }
