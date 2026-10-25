@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         try {
-            const response = await fetch(`/components/${name}`);
+            const response = await fetch(`/components/${name}?v=3`);
 
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.url}`);
